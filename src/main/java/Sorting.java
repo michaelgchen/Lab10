@@ -33,7 +33,27 @@ public class Sorting {
      */
     @SuppressWarnings("unused")
     private static int[] bubbleSort(final int[] array) {
-        return null;
+        int[] newArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i];
+        }
+        boolean isSorted = false;
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < newArray.length - 1; i++) {
+                if (newArray[i] > newArray[i + 1]) {
+                    int temp = newArray[i];
+                    newArray[i] = newArray[i + 1];
+                    newArray[i + 1] = temp;
+                }
+            }
+            for (int i = 0; i < newArray.length - 1; i++) {
+                if (newArray[i] > newArray[i + 1]) {
+                    isSorted = false;
+                }
+            }
+        }
+        return newArray;
     }
 
     /**
@@ -44,7 +64,31 @@ public class Sorting {
      */
     @SuppressWarnings("unused")
     private static int[] selectionSort(final int[] array) {
-        return null;
+        int[] newArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i];
+        }
+        boolean isSorted = false;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = array.length -1; i >= 0; i--) {
+                int temp = newArray[findMin(array)];
+        }
+    }
+
+    /**
+     * returns the index of the max value.
+     * @param array is the array to be checked
+     */
+    private static int findMin(final int[] array) {
+        int min = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < array[min]) {
+                min = i;
+            }
+        }
+        return min;
     }
 
     /**
